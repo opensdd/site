@@ -1,0 +1,119 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+
+export const prerender = true;
+---
+
+<StarlightPage
+	frontmatter={{
+		title: 'OpenSDD',
+		description: 'Spec-driven development for modern AI-assisted teams.',
+	}}
+>
+	<section class="landing-hero sl-hero">
+		<div class="hero-content">
+			<p class="eyebrow">Open Source · Community Built</p>
+			<h2>OpenSDD keeps specifications at the center of AI-assisted work.</h2>
+        <p>
+            It is a flavor of Spec Driven Development specifically designed around <strong>open standards</strong> and
+            <strong>scalable</strong> from a solo developer to entire organizations.
+        </p>
+			<p>
+				The project curates reusable structures, tooling, and recipes so anyone can practice
+				spec-driven development in the open. Bring clarity to your team, contribute guides,
+				and evolve the methodology together.
+			</p>
+			<div class="cta-actions">
+				<a class="sl-button primary" href="/docs/overview/">Explore the docs</a>
+				<a
+					class="sl-button secondary"
+					href="https://github.com/opensdd"
+					target="_blank"
+					rel="noreferrer"
+				>
+					Contribute on GitHub
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="landing-section why">
+		<h2>What OpenSDD Focuses On</h2>
+		<p class="lead">
+			Everything we publish—templates, tooling, and guides—supports three simple principles.
+		</p>
+		<div class="card-grid">
+			<article>
+				<h4>Non-dogmatic & Inclusive</h4>
+				<p>
+					OpenSDD is intentionally lightweight so any team, organization, or individual can
+					adopt the structure without changing how they work.
+				</p>
+			</article>
+			<article>
+				<h4>Built on Open Standards</h4>
+				<p>
+					The approach relies on open formats (Markdown, Git, YAML). Outside of an AI coding
+					agent, no proprietary tooling is required.
+				</p>
+			</article>
+			<article>
+				<h4>Tool-Agnostic Integrations</h4>
+				<p>
+					Specs, recipes, and automations integrate with any IDE, version control system, or
+					AI coding agent. Bring your own stack and plug right in.
+				</p>
+			</article>
+		</div>
+	</section>
+
+	<section class="landing-section principles">
+		<h2>Core Principles</h2>
+		<ul>
+			<li><strong>Specs before code:</strong> Outline intent and architecture before an AI agent commits changes.</li>
+			<li><strong>PR-sized tasks:</strong> Work items remain reviewable and easy to hand off between contributors.</li>
+			<li><strong>Captured learnings:</strong> Research logs, plans, and retros are versioned next to the specs.</li>
+			<li><strong>Open and agnostic:</strong> The methodology stays portable across tools, teams, and AI platforms.</li>
+		</ul>
+	</section>
+
+	<section class="landing-section tools">
+		<h2>Helper Tools</h2>
+		<div class="card-grid">
+			<article>
+				<h3>OSDD CLI</h3>
+				<p>
+					Fetch recipes, materialize workspaces, and launch AI-enabled IDE sessions with a
+					single command. Contributions welcome via pull requests.
+				</p>
+				<a href="/docs/osdd-cli/" class="link-arrow">Learn about the CLI →</a>
+			</article>
+			<article>
+				<h3>Recipe Catalog</h3>
+				<p>
+					Browse community automations, adapt them for your stack, and share new ones to help
+					other teams practice OpenSDD.
+				</p>
+				<a href="/docs/recipes-catalog/" class="link-arrow">Explore recipes →</a>
+			</article>
+			<article>
+				<h3>Marketplace (Preview)</h3>
+				<p>
+					A community-run hub for discovering OpenSDD automations with transparent permissions
+					and implementation notes.
+				</p>
+				<a href="/docs/marketplace/overview/" class="link-arrow">See what’s coming →</a>
+			</article>
+		</div>
+	</section>
+
+	<section class="landing-section get-started">
+		<h2>Get Started in Three Steps</h2>
+		<ol>
+			<li>Clone the repositories and adopt the shared spec folder structure in your projects.</li>
+			<li>Document features as PR-sized tasks that capture research, plan, code, review, and analysis.</li>
+			<li>Automate repetitive flows with the OSDD CLI and community recipes—or publish your own.</li>
+		</ol>
+		<a class="sl-button primary" href="/docs/quickstart/">Follow the quickstart →</a>
+	</section>
+</StarlightPage>

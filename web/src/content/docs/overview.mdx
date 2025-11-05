@@ -1,0 +1,83 @@
+---
+title: Overview
+description: What makes Open Spec-Driven Development unique and how to get oriented quickly.
+---
+
+OpenSDD is an open-source effort to make spec-driven development accessible to any team, organization, or individual. We gather repeatable structures, tools, and guides so humans and AI coding agents can collaborate with shared context.
+
+## What Makes *Open* SDD Unique
+
+1. **Non-dogmatic adoption** – The structure is intentionally lightweight. Layer OpenSDD on top of your existing processes and evolve it as you learn.
+2. **Open standards first** – Markdown, Git, and other open formats power every artifact. Beyond your AI assistant of choice, no proprietary tooling is required.
+3. **Tool-agnostic integrations** – Specs, recipes, and automations plug into any AI coding agent, IDE, or version control system. Bring your own stack.
+
+## Spec-Driven Development at a Glance
+
+- Specifications lead implementation work; code expresses what the specs describe.
+- Context stays with the work—features and tasks reference the specs that informed them, so contributors never start cold.
+- Iteration compounds because research notes, plan updates, and reviews remain alongside the relevant specs.
+- Teams keep control of their tooling. OpenSDD overlays on top of conversations already happening in your repos and automation pipelines.
+
+### Core Spec Artifacts
+
+| Spec Type | Purpose | Typical Contents |
+| --- | --- | --- |
+| **Requirements Spec** | Defines user intent and success metrics. | Personas, acceptance criteria, KPIs, business goals. |
+| **Tech Design Spec** | Maps requirements onto system architecture. | API contracts, data models, integration diagrams, constraints. |
+| **Feature Specs** | Capture releasable slices of functionality. | Links back to requirements/tech specs, user flows, success criteria. |
+| **Task Specs** | Describe PR-sized work units. | Implementation plan, risk notes, test strategy, references. |
+
+Together these documents form a “living project” that evolves with every change. Features branch into tasks small enough for humans or agents to ship independently, yet the shared context keeps everyone aligned.
+
+## Living Projects in Practice
+
+1. **Structured hierarchy** – Projects → Features → Tasks mirrors how work is delivered.
+2. **Cross references** – Specs link to one another so agents and maintainers can traverse dependencies quickly.
+3. **Automation readiness** – Each task carries enough detail for an AI assistant to execute without guesswork.
+
+## The Open Approach
+
+OpenSDD pairs the living-project model with openness so the methodology stays portable across ecosystems.
+
+### Open Standards over Proprietary Lock-In
+
+- Specs live in plain text formats (Markdown/MDX) inside Git repositories.
+- No required SaaS backends or custom databases—use the tools your team already trusts.
+
+### Portable Project Structure
+
+```
+specs/
+└── PROJECT-001-customer-portal/
+    ├── prd.md
+    ├── tech_brief.md
+    ├── FEAT-002-authentication/
+    │   ├── feature.md
+    │   └── TASK-003-login-flow/task.md
+    └── FEAT-004-dashboard/
+        └── TASK-005-chart-refresh/task.md
+```
+
+This layout makes it easy for contributors and agents to inspect intent, history, and implementation details without additional tooling.
+
+### Built for Autonomous Execution
+
+- Tasks are PR-sized so an agent (or pair of agents) can complete them end-to-end.
+- Specs capture research, plans, code updates, reviews, and after-action analysis. Future iterations start with richer context instead of rediscovering constraints.
+- Automation policies can be codified as recipes (see the [Marketplace](../marketplace/overview/)) that enforce consistent flows.
+
+### Collaboration Friendly
+
+- Every change is traceable through Git history and pull requests.
+- Teams can comment directly on specs or tasks during review cycles.
+- Documentation stays close to implementation, making onboarding and knowledge transfer smoother.
+- Contributions are always welcome—start a discussion, open an issue, or submit a pull request in the GitHub organization.
+
+## What This Site Covers
+
+1. **Quickstart** – Adopt OpenSDD in your org with a simple rollout plan (see [Quickstart](../quickstart/)).
+2. **Tools** – Discover the OSDD CLI and the curated recipe catalog that automate repetitive tasks (visit [OSDD CLI](../osdd-cli/) and [Recipes Catalog](../recipes-catalog/)).
+3. **Marketplace (Coming Soon)** – Track the growing set of community-built automations (see [Marketplace Preview](../marketplace/overview/)).
+4. **Resources** – Dive deeper with the original manifesto, community links, and additional reading (browse [Further Reading](../resources/further-reading/)).
+
+Use the sidebar to explore each section and join the community efforts that keep OpenSDD evolving.

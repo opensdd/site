@@ -1,0 +1,59 @@
+---
+title: Quickstart
+description: Roll out OpenSDD in five steps using lightweight specs and AI-assisted workflows.
+---
+
+Need the big picture first? Start with the [Overview](../overview/).
+
+## 1. Establish the Spec Repository
+
+- Create a `specs/` root alongside your code.
+- Track every project as a folder with its own living specs (e.g., `PROJECT-001/`).
+- Version specs with Git so reviews, diffs, and automations work exactly like code.
+- Keep it non-dogmatic—only adopt the folders that serve your team and evolve as you learn.
+
+## 2. Define Living Project Structure
+
+Within each project folder:
+
+- `prd.md` – captures user intent, goals, acceptance criteria, and success metrics.
+- `tech_brief.md` – maps requirements to architecture, APIs, and dependencies.
+- `FEAT-###/feature.md` – one per user story, scoped to a releasable slice.
+- `TASK-###/task.md` – PR-sized tasks that agents or developers can execute independently.
+
+Consistent structure allows AI agents to follow links between specs and reuse the same context across iterations.
+
+## 3. Capture Implementation-Time Specs
+
+For every task, instruct your agent (or team) to maintain:
+
+- `research.md` – discoveries about the current codebase or dependency graph.
+- `plan.md` – concrete implementation steps, blockers, and decision points.
+- `code.md` – running log of progress and changes performed.
+- `review.md` – code review findings with links to resolved issues.
+- `analysis.md` – comparison between the initial plan and final implementation, plus lessons learned.
+
+These artifacts prevent “cold starts” when a future update needs to revisit the same area.
+
+## 4. Integrate Your Automation Stack
+
+OpenSDD is tooling agnostic. Plug in:
+
+- Any AI coding agent (Codex, ClaudeCode, Cursor, Gemini, etc.).
+- Your preferred IDE or terminal workflow.
+- The [OSDD CLI](../osdd-cli/) to fetch and run opinionated automation recipes.
+- Any repository host; Git-based workflows are all you need.
+
+## 5. Iterate and Share
+
+- Encourage teams to submit new recipes or specs via pull requests.
+- Use the [Recipes Catalog](../recipes-catalog/) as a starting point for automation ideas.
+- Feed learnings back into specs so every iteration ships with better context.
+
+> 📘 **Tip:** Start with a single project and one recipe. Demonstrate faster iteration and higher confidence, then replicate the structure across additional teams.
+
+## Contribute Back
+
+- Open an issue or discussion in the relevant repository if you discover gaps or have ideas.
+- Share anonymized specs or templates that others can adapt.
+- Document how your organization applies OpenSDD and add a link to the [Further Reading](../resources/further-reading/) page.

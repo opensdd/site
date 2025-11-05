@@ -1,0 +1,53 @@
+---
+title: OSDD CLI
+description: The companion command-line tool that fetches context and runs OpenSDD recipes.
+---
+
+The [OSDD CLI](https://github.com/opensdd/osdd-cli) is an MIT-licensed tool that streamlines how teams discover, fetch, and execute OpenSDD recipes. It handles workspace preparation so AI agents can focus on implementation.
+
+## Key Capabilities
+
+- **Recipe execution** – Run curated automations from the [recipes catalog](../recipes-catalog/).
+- **Context gathering** – Pulls manifests, prompt files, and repository snapshots into an IDE workspace.
+- **Workspace automation** – Generates files, runs shell commands, and kicks off IDE flows end-to-end.
+- **Cross-platform** – Prebuilt binaries for macOS, Linux, and Windows, plus Homebrew support.
+- **Open by default** – Configurations are plain YAML/JSON and live in Git.
+
+## Installation
+
+```bash
+# macOS/Linux via Homebrew tap
+brew install opensdd/tap/osdd
+
+# or download a release binary
+curl -L https://github.com/opensdd/osdd-cli/releases/latest -o osdd
+chmod +x osdd
+sudo mv osdd /usr/local/bin/
+```
+
+Prefer building from source? Clone the repo and run `make build` (requires Go 1.25.1+).
+
+## Running a Recipe
+
+```bash
+osdd recipe execute docs_update --ide claude
+```
+
+Flags to know:
+
+- `--ide` selects which IDE integration to launch (Codex, Claude, etc.).
+- `--recipe-file` lets you point to a local manifest when authoring new automations.
+
+## Why It Matters
+
+- **Helper role** – The CLI is a facilitator, not a gatekeeper. It ensures every automation starts with the right context and guardrails.
+- **Repeatability** – Recipes encode best practices, like mandatory planning or review loops, so teams don’t reinvent the process every time.
+- **Observability** – Logs and generated artifacts live alongside your specs, enriching the OpenSDD knowledge base.
+
+## Contribute
+
+- Review open issues for starter tasks or propose new ideas via discussions.
+- Improve the CLI by updating manifests, improving error messages, or adding recipe scaffolding helpers.
+- Share feedback on packaging (Homebrew tap, releases) so everyone benefits from smoother installs.
+
+Explore the repository’s [README](https://github.com/opensdd/osdd-cli/blob/main/README.md) for deeper instructions, examples, and developer guidelines.
