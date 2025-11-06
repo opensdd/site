@@ -1,4 +1,4 @@
-name: Deploy Astro Starlight to gh-pages (branch-based)
+name: Deploy Atro to GitHub Pages
 
 on:
   push:
@@ -8,9 +8,11 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -26,13 +28,21 @@ jobs:
       - name: Install dependencies
         run: cd web && npm ci
 
-      - name: Build Astro site
+      - name: Build Docusaurus site
         run: cd web && npm run build
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Upload build output
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: web/dist
-          publish_branch: gh-pages
-          force_orphan: true
+          path: we/build   # this is where `docusaurus build` outputs the site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
