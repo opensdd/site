@@ -9,22 +9,14 @@ OpenSDD recipes package context files, permissions, and execution metadata so th
 
 From the repo’s [README](https://github.com/opensdd/recipes/blob/main/README.md):
 
-```
-global/
-├── agents_md/
-│   └── recipe.json
-└── docs_update/
-    └── recipe.yaml
-```
-
-- **Global recipes** are immediately runnable by ID (e.g., `docs_update`).
+- **Global recipes** are immediately runnable by ID (e.g., `astro_site`).
 - **Manifests** use YAML or JSON and serialize the `ExecutableRecipe` protobuf.
 - **Assets** sit beside each manifest—prompts, scripts, or templates referenced by the recipe.
 
 ## Trying a Recipe
 
 ```bash
-osdd recipe execute docs_update --ide claude
+osdd recipe execute astro_site --ide claude
 ```
 
 The CLI will fetch the manifest, pull required context, and start the IDE automation named in the entry point (`docs_update_run` command in this example).
