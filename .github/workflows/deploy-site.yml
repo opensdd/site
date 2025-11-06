@@ -34,7 +34,7 @@ jobs:
       - name: Upload build output
         uses: actions/upload-pages-artifact@v3
         with:
-          path: we/build   # this is where `docusaurus build` outputs the site
+          path: we/dist
 
   deploy:
     needs: build
